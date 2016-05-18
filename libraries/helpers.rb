@@ -50,6 +50,7 @@ module Nomad
       log_level: { kind_of: String, equal_to: %w( WARN INFO DEBUG ) },
       bind_addr: { kind_of: String },
       enable_debug: { kind_of: [TrueClass, FalseClass] },
+      consul: Nomad::Helpers.conf_keys_include_opts(%w( addr )),
       ports: Nomad::Helpers.conf_keys_include_opts(%w( http rpc serf )),
       addresses: Nomad::Helpers.conf_keys_include_opts(%w( http rpc serf )),
       advertise: Nomad::Helpers.conf_keys_include_opts(%w( http rpc serf )),
